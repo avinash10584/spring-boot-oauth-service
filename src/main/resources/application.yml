@@ -1,0 +1,30 @@
+spring: 
+  application:
+    name: oauth-service
+  security: 
+    oauth2:
+      client: 
+        provider:
+          facebook: 
+            authorization-uri: https://www.facebook.com/dialog/oauth
+            token-uri: https://graph.facebook.com/oauth/access_token  
+            user-info-uri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
+          google: 
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://www.googleapis.com/oauth2/v4/token  
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+        registration: 
+          facebook: 
+            client-id: 839494969721276
+            client-secret: 68ac08d174d2b5c30f03c947d9c3a199
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+          google: 
+            client-id: 551796382004-p1det2mo3d7hm3k9r9bl0s52bafmqonl.apps.googleusercontent.com
+            client-secret: RekNVrShVaggJO-zSPyi0N82
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code  
+            scope: openid, profile, email
+server: 
+  port: 3011
+  
