@@ -32,7 +32,6 @@ public class UserInfoOAuthService extends DefaultOAuth2UserService {
         if (StringUtils.isEmpty(email)) {
             throw new RuntimeException("Email not found from OAuth2 provider");
         }
-
         return oAuth2User;
     }
 }
