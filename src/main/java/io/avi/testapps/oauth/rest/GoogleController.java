@@ -5,17 +5,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.avi.testapps.oauth.AccessToken;
-import io.avi.testapps.oauth.client.social.FacebookApiClient;
+import io.avi.testapps.oauth.client.social.GoogleApiClient;
 
-
-@RestController("/facebook")
-public class FacebookController {
+@RestController("/google")
+public class GoogleController {
     
     @Autowired
     protected AccessToken accessToken;
     
-    @GetMapping("/profile")    
+    @GetMapping("/gmail")    
     public String getProfile() {
-        return new FacebookApiClient(accessToken.getToken()).getProfile();
+        return new GoogleApiClient(accessToken.getToken()).getProfile();
     }
 }

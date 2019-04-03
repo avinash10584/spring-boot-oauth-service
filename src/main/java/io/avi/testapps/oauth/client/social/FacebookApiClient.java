@@ -1,8 +1,8 @@
-package io.avi.testapps.oauth.client.facebook;
+package io.avi.testapps.oauth.client.social;
 
-import io.avi.testapps.oauth.client.AbstractOauthApiClient;
+import io.avi.testapps.oauth.client.OAuthRestTemplate;
 
-public class FacebookApiClient extends AbstractOauthApiClient {
+public class FacebookApiClient extends OAuthRestTemplate {
 
     private static final String GRAPH_API_BASE_URL = "https://graph.facebook.com/v2.12";
 

@@ -8,11 +8,11 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.RestTemplate;
 
-public abstract class AbstractOauthApiClient {
+public class OAuthRestTemplate {
 
     protected RestTemplate restTemplate;
-
-    public AbstractOauthApiClient(String accessToken) {
+    
+    public OAuthRestTemplate(String accessToken) {
         this.restTemplate = new RestTemplate();
         if (accessToken != null) {
             this.restTemplate.getInterceptors().add(getBearerTokenInterceptor(accessToken));
@@ -20,7 +20,7 @@ public abstract class AbstractOauthApiClient {
             this.restTemplate.getInterceptors().add(getNoTokenInterceptor());
         }
     }
-
+    
     private ClientHttpRequestInterceptor getBearerTokenInterceptor(final String accessToken) {
         ClientHttpRequestInterceptor interceptor = new ClientHttpRequestInterceptor() {
 
