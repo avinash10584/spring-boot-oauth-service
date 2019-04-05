@@ -2,12 +2,14 @@ package io.avi.testapps.oauth.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.avi.testapps.oauth.AccessToken;
 import io.avi.testapps.oauth.client.social.GoogleApiClient;
 
-@RestController("/google")
+@RestController
+@RequestMapping("/google")
 public class GoogleController {
     
     @Autowired

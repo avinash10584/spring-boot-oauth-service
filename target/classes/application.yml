@@ -24,7 +24,7 @@ spring:
             client-secret: RekNVrShVaggJO-zSPyi0N82
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             authorization-grant-type: authorization_code  
-            scope: openid, profile, email
+            scope: openid, profile, email, https://mail.google.com/
 server: 
   port: 3011
   

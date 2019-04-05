@@ -12,7 +12,7 @@ import io.avi.testapps.oauth.AccessToken;
 import io.avi.testapps.oauth.client.OAuthProvider;
 import io.avi.testapps.oauth.client.social.OAuthApiClient;
 
-@RestController("/")
+@RestController
 public class OAuthController {
     
     @Autowired
